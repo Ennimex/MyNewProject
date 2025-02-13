@@ -14,16 +14,16 @@ export default function App() {
       
       <Text>Esta app es un ejemplo</Text>
       
-      <Boton titulo='Press me...' 
-      onPress={()=>{Alert.alert('Saludos a Acuario...')}}
-      icono ={<AntDesign name="play" size={24} color="white"/>}
+      <Boton titulo='Press me...'
+      onPress={() => { Alert.alert('Saludos a Acuario...'); } }
+      icono={<AntDesign name="play" size={24} color="white" />}
       posicionIcono='izquierda'
       variante='peligro'
-      disable={true}/>
+      disable={true} estilo={undefined}/>
 
       <Boton titulo='Google' onPress={() => { Alert.alert('Se logueo con google'); } }
       icono={<AntDesign name="googleplus" size={24} color="black" />}
-      estilo={styles.botong} variante={'peligro'} disabled={false} posicionIcono={'izquierda'}/>
+      estilo={styles.botong} variante={'peligro'} disable={false} posicionIcono={'izquierda'}/>
       
       <StatusBar style="auto" />
     </View>
