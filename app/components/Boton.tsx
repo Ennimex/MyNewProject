@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, Pressable, StyleProp, ViewStyle} from 'react-native';
 import React from 'react';
 import { setStatusBarBackgroundColor } from 'expo-status-bar';
- 
+
 type Propiedades = {
     titulo: string;
     onPress: () => void;
