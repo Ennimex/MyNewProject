@@ -4,7 +4,8 @@ import App from './App';
 import Login from './app/screens/Login';
 import Plantilla from './app/screens/Plantilla';
 import Calculadora from './app/components/Calculadora';
-import TipCalculator from './app/components/CalculadoraPropinas';
+import CalculadoraPropinas from './app/components/CalculadoraPropinas';
+
 
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
