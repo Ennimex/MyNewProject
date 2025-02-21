@@ -6,6 +6,7 @@ import Plantilla from './app/screens/Plantilla';
 import Calculadora from './app/components/Calculadora';
 import CalculadoraPropinas from './app/components/CalculadoraPropinas';
 import FakeStone from './app/screens/FakeStone';
+import FakeStone2 from './app/screens/FakeStone2';
 
 
 
