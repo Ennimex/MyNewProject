@@ -3,15 +3,15 @@ import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Foother from '../components/Footer'
 
-const FakeStone2 = () => {
+const FakeStore2 = () => {
     type producto= {
-        id: number,
-        nombre: string,
-        precio: number,
-        descripcion: string,
-        categoria: string,
-        imagen: string,
-        raiting: {
+        id?: number,
+        title: string,
+        price?: number,
+        description: string,
+        category?: string,
+        image: string,
+        rating?: {
             rate: number,
             count: number
         }
@@ -28,7 +28,7 @@ useEffect(() => {
             const respuesta= await fetch('https://fakestoreapi.com/products');
             if (!respuesta.ok) {
                 //si la respuesta no es correcta lanzamos un error
-                throw new Error('Error en la llamada:${respuesta.status}');
+                throw new Error(`Error en la llamada: ${respuesta.status}`);
             }
             //pasamos la respsuesta a json
             const datos = await respuesta.json();
@@ -47,13 +47,27 @@ useEffect(() => {
 //pantalla del render item
 const ProductosItem = (props: producto) => {
     return (
-        <View>
-            <Text>Producto: {props.nombre}</Text>
-            <Text>Descripcion : {props.descripcion}</Text>
-            <Image source={{ uri: props.imagen }} style={{ width: 100, height: 100 }} />
+        <View style={styles.containerItem}>
+            <Text>Producto: {props.title}</Text>
+            <Text>Descripcion : {props.description}</Text>
+            <Image source={{ uri: props.image }} style={{ width: 100, height: 100 }} />
         </View>
     )
 }
+//pantalla con datos cargados
+const LoadScreen = () => {
+    return (
+        <View>
+            <Text>Productos</Text>
+            <FlatList 
+            data={Productos} 
+            renderItem={({ item }) => <ProductosItem {...item} />}
+            keyExtractor = {item => item.id?.toString() || ''}
+            />
+        </View>
+    )
+}
+
 
 const UnLoadScreen = () => {
     return (
@@ -63,21 +77,14 @@ const UnLoadScreen = () => {
         </View>
     )
 }
-//pantalla con datos cargados
-const LoadScreen = () => {
-    return (
-        <View>
-            <Text>Productos</Text>
-            <FlatList data={Productos} 
-            renderItem={({ item }) => <ProductosItem {...item} />}
-            />
-        </View>
-    )
-}
+
+
+
 return (
     <View>
-        <Header titulo="My Title" nombre="My Name" imagen="my-image-url" />
-        <Text>Fake Stone</Text>
+        <Header titulo="Fake store" 
+        nombre="Alexander Hernandez Meza" 
+        imagen="my-image-url" />
         //manda a llamar a la funcion que muestra la pantalla de carga
         {Cargando ? UnLoadScreen() : LoadScreen()}
         <Foother fecha="2023-10-01" grupo="Group A" />
@@ -85,18 +92,17 @@ return (
     )
 }
 
-export default FakeStone2;
+export default FakeStore2;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+    container:{
+        justifyContent:'center',
+        alignItems:'center'
     },
-    containerItem: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-
+    containerItem:{
+        backgroundColor:'#FF55',
+        borderColor:'black',
+        borderWidth:2,
+        borderRadius:10
     }
 })
