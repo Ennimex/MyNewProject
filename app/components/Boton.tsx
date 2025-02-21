@@ -1,61 +1,60 @@
-import {StyleSheet, Text, View, Pressable, StyleProp, ViewStyle} from 'react-native';
-import React from 'react';
-import { setStatusBarBackgroundColor } from 'expo-status-bar';
+import { Pressable, StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native'
+import React from 'react'
 
-type Propiedades = {
-    titulo: string;
-    onPress: () => void;
-    variante: 'primario' | 'secundario'| 'peligro',
-    estilo:StyleProp<ViewStyle>,
-    disable: boolean;
-    icono: React.ReactNode;
-    posicionIcono: 'izquierda' | 'derecha';
-};
+type props={
+    titulo:string,
+    onPress:()=>void,
+    variante?:'primario'|'secundario'|'peligro',
+    estilo?:StyleProp<ViewStyle>,
+    disable?:boolean,
+    icono?:React.ReactNode,
+    posicionIcono?:'izquierda'|'derecha'
+}
 
-const Boton = (props: Propiedades) => {
-    const getVariante = () => {
-        switch (props.variante) {
-            case 'secundario':return styles.botonSecundario;
-            case 'peligro':return styles.botonPeligro;
-            default: return styles.botonPrimario;
+const Boton = (Props:props) => {
+    const getVariante=()=>{
+        switch(Props.variante){
+            case 'secundario': return styles.secuandario;
+            case 'peligro': return styles.peligro;
+            default: return styles.primario
         }
-    };   
+    }
+  return (
+    <Pressable onPress={Props.onPress} 
+    style={[styles.boton,getVariante(), Props.estilo , Props.disable && styles.disable]} 
+    disabled={Props.disable}>
+        {Props.icono && Props.posicionIcono !== 'derecha' && Props.icono}
+        <Text style={styles.titulo} >{Props.titulo}</Text>
+        {Props.icono && Props.posicionIcono === 'derecha' && Props.icono}
+    </Pressable>
+  )
+}
 
-    return (
-        <Pressable onPress={props.onPress} style={[getVariante(), props.disable && styles.disable]}>
-            <View>
-                {props.icono && props.posicionIcono !== 'derecha' && props.icono} 
-                <Text style={styles.titulo}> {props.titulo}</Text>
-                {props.icono && props.posicionIcono === 'derecha' && props.icono}
-            </View>
-        </Pressable>
-    );
-};
-
-export default Boton;
+export default Boton
 
 const styles = StyleSheet.create({
-    boton: {
-        backgroundColor: '#000',
-        flexDirection: 'row',
-        padding: 10,
-        borderRadius: 5,
-        
+    boton:{
+        backgroundColor:'#4B2E1E',
+        flexDirection:'row',
+        padding:10,
+        borderWidth:2,
+        borderColor:'#3F704D',
+        borderRadius:15
     },
-    titulo: {
-        color: '#fff',
-        marginStart: 10,
+    titulo:{
+        color:'white',
+        marginStart:10
     },
-    botonPrimario: {
-        backgroundColor: '#000',
+    primario:{
+        backgroundColor:'#4B2E1E'
     },
-    botonSecundario: {
-        backgroundColor: '#000',
+    secuandario:{
+        backgroundColor:'#A67B5B'
     },
-    botonPeligro: {
-        backgroundColor: '#000',
+    peligro:{
+        backgroundColor:'red'
     },
-    disable: {
-        backgroundColor: '#000',
-    },
-});
+    disable:{
+        opacity:.6
+    }
+})

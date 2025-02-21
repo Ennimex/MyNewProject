@@ -11,7 +11,7 @@ const Header = (props:propiedades) => {
     return (
         <View style={styles.container}>
             <View>
-                <Image source={ require('../../assets/logo.png')}  style={styles.imagen}/>
+                <Image source={ require('../assets/logo.png')}  style={styles.imagen}/>
             </View>   
         <View style={styles.container2}>
             <Text style={styles.titulo} >{props.titulo}</Text>
