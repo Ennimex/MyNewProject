@@ -12,10 +12,6 @@ export default function App() {
       <ActivityIndicator size={'large'} color={'pink'} />
       
       <Text>Esta app es un ejemplo</Text>
-      
-  
-     
-      
       <StatusBar style="auto" />
     </View>
   );

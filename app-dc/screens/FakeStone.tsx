@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import Header from '../../app/components/Header'
-import Foother from '../../app/components/Footer'
+import Foother from '../../app/components/foother'
 import React, { useState } from 'react'
 import Boton from '../../app/components/Boton'
 
