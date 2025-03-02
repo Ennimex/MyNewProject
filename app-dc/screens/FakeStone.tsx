@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
-import Header from '../components/Header'
-import Foother from '../components/Footer'
+import Header from '../../app/Header'
+import Foother from '../../app/Footer'
 import React, { useState } from 'react'
-import Boton from '../components/Boton'
+import Boton from '../../app/Boton'
 
 const FakeStone = () => {
   type producto= {
