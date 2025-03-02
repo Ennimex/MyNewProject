@@ -1,6 +1,6 @@
 import { Alert, Button, StyleSheet, Text, TextInput, View } from "react-native";
 
-export default function Login(){
+const login = () => {
     return(
         <View style={estilo.contenedor}>
             <Text style={estilo.titulo}>PODAI</Text>
@@ -39,3 +39,6 @@ const estilo = StyleSheet.create({
         padding:7
     }
 })
+
+
+export default login;

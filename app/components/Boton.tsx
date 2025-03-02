@@ -11,7 +11,7 @@ type props={
     posicionIcono?:'izquierda'|'derecha'
 }
 
-const Boton = (Props:props) => {
+const boton = (Props:props) => {
     const getVariante=()=>{
         switch(Props.variante){
             case 'secundario': return styles.secuandario;
@@ -30,7 +30,7 @@ const Boton = (Props:props) => {
   )
 }
 
-export default Boton
+export default boton
 
 const styles = StyleSheet.create({
     boton:{

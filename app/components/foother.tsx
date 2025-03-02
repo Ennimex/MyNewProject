@@ -6,7 +6,7 @@ type propiedades = {
     grupo: string;
 };
 
-const Foter = (props:propiedades) => {
+const foother = (props:propiedades) => {
     return (
         <View style={styles.container}>
             <Text> {props.fecha} </Text>
@@ -14,7 +14,7 @@ const Foter = (props:propiedades) => {
         </View>
     );
 };
-export default Foter;
+export default foother;
 
 const styles = StyleSheet.create({
     container: {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Foother from './components/foother'
 
-const FakeStore2 = () => {
+const fakeStore2 = () => {
     type producto= {
         id?: number,
         title: string,
@@ -92,7 +92,7 @@ return (
     )
 }
 
-export default FakeStore2;
+export default fakeStore2;
 
 const styles = StyleSheet.create({
     container:{

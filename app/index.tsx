@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Button } from 'react-native'
 import React from 'react'
-import {Link, useRouter}   from 'expo-router'
+import {Link, useRouter} from 'expo-router'
 
 const index = () => {
 const router = useRouter();
