@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Header from '../../app/Header'
-import Foother from '../../app/Footer'
+import Header from '../../app/components/Header'
+import Foother from '../../app/components/Footer'
 import Contenido from '../components/contenido'
 
 const Plantilla = () => {

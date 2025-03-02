@@ -7,7 +7,6 @@ const propiedades = () => {
   return (
     <View>
       <Text>propiedades</Text>
-        <Link href='index'> index </Link>
         <Button title="ir a index" 
         onPress={()=>{router.replace('index')}} />
     </View>

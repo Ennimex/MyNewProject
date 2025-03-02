@@ -7,10 +7,8 @@ const router = useRouter();
 return (
     <View>
         <Text>index</Text>
-        <Link href ={'index'}></Link>
-
         <Button title="ir a propiedades" 
-        onPress={()=>{router.replace('propiedades')}} />
+        onPress={()=>{router.push('propiedades')}} />
     </View>
 )
 }
