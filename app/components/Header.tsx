@@ -7,7 +7,7 @@ type propiedades={
     imagen:string
 }
 
-const Header = (props:propiedades) => {
+const header = (props:propiedades) => {
     return (
         <View style={styles.container}>
             <View>
@@ -21,7 +21,7 @@ const Header = (props:propiedades) => {
 )
 }
 
-export default Header
+export default header
 
 const styles = StyleSheet.create({
     container:{

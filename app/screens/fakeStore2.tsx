@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, ActivityIndicator, FlatList } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import Header from './components/Header'
-import Foother from './components/foother'
+import Header from '../components/header'
+import Foother from '../components/foother'
 
 const fakeStore2 = () => {
     type producto= {
